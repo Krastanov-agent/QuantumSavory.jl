@@ -326,6 +326,8 @@ function _switch_run_swaps(prot, match)
     end
 end
 
+_switch_run_swaps(::SimpleSwitchDiscreteProt, ::Nothing) = nothing
+
 
 """
 $TYPEDEF
