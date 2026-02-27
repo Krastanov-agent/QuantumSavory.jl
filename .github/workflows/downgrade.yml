@@ -10,6 +10,7 @@ on:
       - 'docs/**'
 env:
   PYTHON: ~
+  QUANTUMSAVORY_DOWNGRADE_TEST: "true"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -36,7 +37,6 @@ jobs:
       - uses: julia-actions/julia-downgrade-compat@v2
         with:
           skip: Pkg,TOML,InteractiveUtils,Random,LinearAlgebra,Statistics,Printf,Combinatorics,Random,PrecompileTools
-          strict: false
           julia_version: ${{ matrix.version }}
       - uses: julia-actions/cache@v2
       - uses: julia-actions/julia-buildpkg@v1
