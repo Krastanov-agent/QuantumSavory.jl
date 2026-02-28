@@ -215,7 +215,7 @@ for n in 4:7
     run(sim, 300)
 
     q1 = query(net[1], EntanglementCounterpart, size(graph)[1], ❓)
-    # This guard should trigger only very rarely, but keeps stochastic CI runs consistent.
+    # The guard below should be false (skipping the `if` block) only very rarely, but keeps stochastic CI runs consistent.
     if !isnothing(q1)
         q2 = query(net[size(graph)[1]], EntanglementCounterpart, 1, q1.slot.idx)
 
