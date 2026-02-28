@@ -8,9 +8,9 @@ function QuantumClifford.apply!(state::QuantumClifford.MixedDestabilizer, gseq::
     end
     state
 end
-apply_popindex!(state, g::QuantumClifford.AbstractSingleQubitOperator, indices::AbstractVector{Int}) =
+apply_popindex!(state, g::Type{<:QuantumClifford.AbstractSingleQubitOperator}, indices::AbstractVector{Int}) =
     QuantumClifford.apply!(state, g(pop!(indices)::Int))
-apply_popindex!(state, g::QuantumClifford.AbstractTwoQubitOperator, indices::AbstractVector{Int}) =
+apply_popindex!(state, g::Type{<:QuantumClifford.AbstractTwoQubitOperator}, indices::AbstractVector{Int}) =
     QuantumClifford.apply!(state, g(pop!(indices)::Int, pop!(indices)::Int))
 
 projector(state::QuantumClifford.Stabilizer) = projector(StabilizerState(state)) # convert to a type that QuantumSymbolics can handle
