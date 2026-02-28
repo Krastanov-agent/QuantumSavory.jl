@@ -8,6 +8,8 @@ function QuantumClifford.apply!(state::QuantumClifford.MixedDestabilizer, gseq::
     end
     state
 end
+QuantumClifford.apply!(state::QuantumClifford.MixedDestabilizer, indices::AbstractVector{Int}, gseq::QCGateSequence) =
+    QuantumClifford.apply!(state, gseq, indices)
 apply_popindex!(state, g::Type{<:QuantumClifford.AbstractSingleQubitOperator}, indices::AbstractVector{Int}) =
     QuantumClifford.apply!(state, g(pop!(indices)::Int))
 apply_popindex!(state, g::Type{<:QuantumClifford.AbstractTwoQubitOperator}, indices::AbstractVector{Int}) =
