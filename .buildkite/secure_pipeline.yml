@@ -4,10 +4,11 @@ steps:
       BUILDKITE_PLUGIN_CRYPTIC_BASE64_SIGNED_JOB_ID_SECRET: ${BUILDKITE_PLUGIN_CRYPTIC_BASE64_SIGNED_JOB_ID_SECRET?}
     plugins:
       - JuliaCI/cryptic:
-          variables:
-            # Replace this placeholder with the encrypted value produced by
-            # `encrypt_variable DOCUMENTER_KEY`.
-            - DOCUMENTER_KEY="REPLACE_WITH_ENCRYPTED_DOCUMENTER_KEY"
+          variables: []
+          # Replace `variables: []` with the encrypted value produced by
+          # `encrypt_variable DOCUMENTER_KEY`, for example:
+          # variables:
+          #   - DOCUMENTER_KEY="..."
       - JuliaCI/julia#v1:
           version: "1"
       - QuantumSavory/julia-xvfb#v1:
