@@ -1,0 +1,10 @@
+steps:
+  - label: ":rocket: launch pipelines"
+    plugins:
+      - JuliaCI/cryptic:
+          unsigned_pipelines:
+            - .buildkite/pipeline.yml
+          signed_pipelines:
+            - pipeline: .buildkite/secure_pipeline.yml
+              signature_file: .buildkite/secure_pipeline.yml.signature
+    command: "true"
