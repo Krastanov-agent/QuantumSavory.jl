@@ -1,6 +1,6 @@
 # NetworkNodeController PR renderings
 
-These files were generated from feature commit `1c01dd05` for issue #531. The
+These files were generated from feature commit `97ff035c` for issue #531. The
 fixture uses the existing five-node same-chain QTCP scenario with flows 301 and
 302 and renders the controller on node 2 after 12 simulation-time units.
 
