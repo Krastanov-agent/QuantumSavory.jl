@@ -43,10 +43,8 @@ controller = controllers[HUB]
 @assert length(controller._log) == FLOW_COUNT
 @assert all(stats.delivered == 1 for stats in values(controller._log))
 
-CairoMakie.with_theme(size=(800, 2200)) do
-    open("/tmp/qtcp-endnodecontroller-20-flows-image-png.png", "w") do io
-        show(io, MIME"image/png"(), controller)
-    end
+open("/tmp/qtcp-endnodecontroller-20-flows-image-png.png", "w") do io
+    show(io, MIME"image/png"(), controller)
 end
 
 body = repr(MIME"text/html"(), controller)
