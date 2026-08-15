@@ -40,10 +40,8 @@ processed = filter(event -> event.processed, controller._log)
 @assert length(processed) == length(FLOW_IDS)
 @assert all(iszero(statistic.backlog) for statistic in QuantumSavory.ProtocolZoo.QTCP._network_node_controller_statistics(controller))
 
-with_theme(Theme(size=(1000, 1600))) do
-    open("network-node-controller-20-flows.png", "w") do io
-        show(io, MIME"image/png"(), controller)
-    end
+open("network-node-controller-20-flows.png", "w") do io
+    show(io, MIME"image/png"(), controller)
 end
 
 html = repr(MIME"text/html"(), controller)
