@@ -1,6 +1,6 @@
 # NetworkNodeController PR renderings
 
-These files were generated from feature commit `0e7ac913` for issue #531. The
+These files were generated from feature commit `eb1556f4` for issue #531. The
 fixture uses the existing five-node same-chain QTCP scenario with flows 301 and
 302 and renders the controller on node 2 after 12 simulation-time units.
 
@@ -13,8 +13,8 @@ fixture uses the existing five-node same-chain QTCP scenario with flows 301 and
 
 The `network-node-controller-20-flows*` files use a three-node chain with 20
 one-pair flows from node 1 to node 3. They render the controller at node 1 after
-30 simulation-time units. The PNG uses the `show` method's fixed `(600, 900)`
-logical canvas without a theme override.
+30 simulation-time units. The PNG uses the generic `show` method's default
+`(600, 450)` logical canvas without a theme override.
 
 `render-network-node-controller-20-flows.jl` is the script used to produce the
 PNG and HTML source. The HTML screenshot was produced with headless Chromium.
